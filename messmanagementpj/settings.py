@@ -84,7 +84,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "mess db",
         "USER": "postgres",
-        "PASSWORD": "1211",
+        "PASSWORD": "ADD YOUR OWN PASSWORD HERE",
         "HOST": "127.0.0.1",
         "PORT": "5432",
     }
