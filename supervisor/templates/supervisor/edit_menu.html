@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisor Page</title>
+
+    <!-- Bootstrap 5 CDN links-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Custom Files' Link -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive-style.css' %}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="header-wrapper">
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-stream navbar-toggler-icon"></i>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav menu-navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'register_student' %}">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'all_students' %}">View Data</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'weekly_menu' %}">Edit Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'fee_students' %}">Fee Status</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'log_out' %}">Log Out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+     <!--Menu section-->
+     <section id="menu" class="services_wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center mt-5 mb-5">
+                    <h2>WEEKLY MENU</h2>
+                    <p>The following menu is followed <br class="d-none d-lg-block"> on a weekly basis</p>
+                </div>
+        
+                <!-- Monday -->
+                <div class="col-lg-3 col-sm-6 mb-4">
+                    <div class="card rounded-0 border-0 text-center py-5 px-3">
+                        <div>
+                            <img src="{% static 'images/menu/food1.webp' %}" class="img-fluid">
+                        </div>
+                        <h5 class="text-uppercase mt-3 mb-3">Monday</h5>
+                        <ul>
+                            <li><strong>Breakfast:</strong> {{ menus.0.breakfast.main_dish }}, {{ menus.0.breakfast.side_dish }}{% if menus.0.breakfast.roti %}, Roti{% endif %}</li>
+                            <li><strong>Lunch:</strong> {{ menus.0.lunch.main_dish }}, {{ menus.0.lunch.side_dish }}{% if menus.0.lunch.roti %}, Roti{% endif %}</li>
+                            <li><strong>Dinner:</strong> {{ menus.0.dinner.main_dish }}, {{ menus.0.dinner.side_dish }}{% if menus.0.dinner.roti %}, Roti{% endif %}</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <!-- Tuesday -->
+                <div class="col-lg-3 col-sm-6 mb-4">
+                    <div class="card rounded-0 border-0 text-center py-5 px-3">
+                        <div>
+                            <img src="{% static 'images/menu/food2.webp' %}" class="img-fluid">
+                        </div>
+                        <h5 class="text-uppercase mt-3 mb-3">Tuesday</h5>
+                        <ul>
+                            <li><strong>Breakfast:</strong> {{ menus.1.breakfast.main_dish }}, {{ menus.1.breakfast.side_dish }}{% if menus.1.breakfast.roti %}, Roti{% endif %}</li>
+                            <li><strong>Lunch:</strong> {{ menus.1.lunch.main_dish }}, {{ menus.1.lunch.side_dish }}{% if menus.1.lunch.roti %}, Roti{% endif %}</li>
+                            <li><strong>Dinner:</strong> {{ menus.1.dinner.main_dish }}, {{ menus.1.dinner.side_dish }}{% if menus.1.dinner.roti %}, Roti{% endif %}</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <!-- Wednesday -->
+                <div class="col-lg-3 col-sm-6 mb-4">
+                    <div class="card rounded-0 border-0 text-center py-5 px-3">
+                        <div>
+                            <img src="{% static 'images/menu/food3.webp' %}" class="img-fluid">
+                        </div>
+                        <h5 class="text-uppercase mt-3 mb-3">Wednesday</h5>
+                        <ul>
+                            <li><strong>Breakfast:</strong> {{ menus.2.breakfast.main_dish }}, {{ menus.2.breakfast.side_dish }}{% if menus.2.breakfast.roti %}, Roti{% endif %}</li>
+                            <li><strong>Lunch:</strong> {{ menus.2.lunch.main_dish }}, {{ menus.2.lunch.side_dish }}{% if menus.2.lunch.roti %}, Roti{% endif %}</li>
+                            <li><strong>Dinner:</strong> {{ menus.2.dinner.main_dish }}, {{ menus.2.dinner.side_dish }}{% if menus.2.dinner.roti %}, Roti{% endif %}</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <!-- Thursday -->
+                <div class="col-lg-3 col-sm-6 mb-4">
+                    <div class="card rounded-0 border-0 text-center py-5 px-3">
+                        <div>
+                            <img src="{% static 'images/menu/food4.webp' %}" class="img-fluid">
+                        </div>
+                        <h5 class="text-uppercase mt-3 mb-3">Thursday</h5>
+                        <ul>
+                            <li><strong>Breakfast:</strong> {{ menus.3.breakfast.main_dish }}, {{ menus.3.breakfast.side_dish }}{% if menus.3.breakfast.roti %}, Roti{% endif %}</li>
+                            <li><strong>Lunch:</strong> {{ menus.3.lunch.main_dish }}, {{ menus.3.lunch.side_dish }}{% if menus.3.lunch.roti %}, Roti{% endif %}</li>
+                            <li><strong>Dinner:</strong> {{ menus.3.dinner.main_dish }}, {{ menus.3.dinner.side_dish }}{% if menus.3.dinner.roti %}, Roti{% endif %}</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <!-- Friday -->
+                <div class="col-lg-3 col-sm-6 mb-4">
+                    <div class="card rounded-0 border-0 text-center py-5 px-3">
+                        <div>
+                            <img src="{% static 'images/menu/food5.webp' %}" class="img-fluid">
+                        </div>
+                        <h5 class="text-uppercase mt-3 mb-3">Friday</h5>
+                        <ul>
+                            <li><strong>Breakfast:</strong> {{ menus.4.breakfast.main_dish }}, {{ menus.4.breakfast.side_dish }}{% if menus.4.breakfast.roti %}, Roti{% endif %}</li>
+                            <li><strong>Lunch:</strong> {{ menus.4.lunch.main_dish }}, {{ menus.4.lunch.side_dish }}{% if menus.4.lunch.roti %}, Roti{% endif %}</li>
+                            <li><strong>Dinner:</strong> {{ menus.4.dinner.main_dish }}, {{ menus.4.dinner.side_dish }}{% if menus.4.dinner.roti %}, Roti{% endif %}</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <!-- Saturday -->
+                <div class="col-lg-3 col-sm-6 mb-4">
+                    <div class="card rounded-0 border-0 text-center py-5 px-3">
+                        <div>
+                            <img src="{% static 'images/menu/food6.png' %}" class="img-fluid">
+                        </div>
+                        <h5 class="text-uppercase mt-3 mb-3">Saturday</h5>
+                        <ul>
+                            <li><strong>Breakfast:</strong> {{ menus.5.breakfast.main_dish }}, {{ menus.5.breakfast.side_dish }}{% if menus.5.breakfast.roti %}, Roti{% endif %}</li>
+                            <li><strong>Lunch:</strong> {{ menus.5.lunch.main_dish }}, {{ menus.5.lunch.side_dish }}{% if menus.5.lunch.roti %}, Roti{% endif %}</li>
+                            <li><strong>Dinner:</strong> {{ menus.5.dinner.main_dish }}, {{ menus.5.dinner.side_dish }}{% if menus.5.dinner.roti %}, Roti{% endif %}</li>
+                        </ul>
+                    </div>
+                </div>
+        
+                <!-- Sunday -->
+                <div class="col-lg-3 col-sm-6 mb-4">
+                    <div class="card rounded-0 border-0 text-center py-5 px-3">
+                        <div>
+                            <img src="{% static 'images/menu/food7.webp' %}" class="img-fluid">
+                        </div>
+                        <h5 class="text-uppercase mt-3 mb-3">Sunday</h5>
+                        <ul>
+                            <li><strong>Breakfast:</strong> {{ menus.6.breakfast.main_dish }}, {{ menus.6.breakfast.side_dish }}{% if menus.6.breakfast.roti %}, Roti{% endif %}</li>
+                            <li><strong>Lunch:</strong> {{ menus.6.lunch.main_dish }}, {{ menus.6.lunch.side_dish }}{% if menus.6.lunch.roti %}, Roti{% endif %}</li>
+                            <li><strong>Dinner:</strong> {{ menus.6.dinner.main_dish }}, {{ menus.6.dinner.side_dish }}{% if menus.6.dinner.roti %}, Roti{% endif %}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!--Bootstrap 5 JS CDN Links-->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS File-->
+    <script src="{% static 'js/mess.js' %}"></script>
+
+</body>
+</html>

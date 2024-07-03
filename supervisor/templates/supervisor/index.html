@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supervisor Page</title>
+
+    <!-- Bootstrap 5 CDN links-->
+    <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-wJkOo9d8vhHt9t2KggRzEk3L0anUOXu3cwPzVsUz7p3JvZMH6w2aLk4eN5wCU3M++iCSvVKwZUgc1os++f6Z7A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+     <!--Custom Files' Link-->
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+     <link rel="stylesheet" href="{% static 'css/responsive-style.css' %}">
+
+</head>
+<body>
+
+    <!--Navbar-->
+    <header class = "header-wrapper">
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <span class="navbar-toggler-icon"></span> -->
+                <i class="fas fa-stream navbar-toggler-icon"></i>
+              </button>
+              
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav menu-navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'register_student' %}">Register</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'all_students' %}">View Data</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'weekly_menu' %}">Edit Menu</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'fee_students' %}">Fee Status</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'log_out' %}">Log Out</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <section class = "banner_wrapper">
+        <div class = "container">
+          <div class = "row">
+            <div class = "col-lg-7 order-lg-1 order-2 banner-content">
+              <h2 class = "text-uppercase position-relative">{{request.session.name}}'s Portal</h2>
+            </div> 
+            <div class = "col-lg-5 order-lg-2 order-1">
+              <div class = "top-right-img">
+                <img src = "{% static 'images/supervisor_pg/reg.jpg' %}" class = "img-fluid" style="max-width: 110%; max-height: 200%;">
+              </div>
+            </div> 
+          </div>
+        </div>
+      </section>
+
+      <!--Bootstrap 5 JS CDN Links-->
+    <script src = "https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS File-->
+    <script src = "{% static 'js/mess.js' %}"></script>
+
+</body>
+</html>

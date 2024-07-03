@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Student</title>
+
+    <!-- Bootstrap 5 CDN links-->
+    <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-wJkOo9d8vhHt9t2KggRzEk3L0anUOXu3cwPzVsUz7p3JvZMH6w2aLk4eN5wCU3M++iCSvVKwZUgc1os++f6Z7A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+     <!--Custom Files' Link-->
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+</head>
+<body>
+
+   
+    
+    <!--register section-->
+    <section id = "edit" class = "banner_wrapper">
+      {% if success is True %}
+      <div class="alert alert-success" role="alert">
+        Student successfully updated in the system!
+      </div>
+      {% endif %}
+      <a class = "main-btn primary-btn" href = "{% url 'all_students' %}" style = "margin-left: 70px; margin-bottom: 50px;"> Go back </a>
+      <div class="container">
+        <h2>Update a Student</h2>
+          <form method="POST" novalidate>
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit">Update</button>
+          </form>
+        </div>
+      </section>
+    
+    <!--Bootstrap 5 JS CDN Links-->
+    <script src = "https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS File-->
+    <script src = "{% static 'js/mess.js' %}"></script>
+
+</body>
+</html>

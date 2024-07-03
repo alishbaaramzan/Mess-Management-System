@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mess Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+</head>
+<body class="main-body-main">
+    <div class="container-main d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+        <img class="giki-icon" src="{% static 'images/giki.png' %}" alt="GIKI Icon" style="position: absolute; top: 20px; left: 20px; width: 130px; height: auto;">
+        <div class="row">
+            <div class="col text-center mb-4">
+                <h1 class = "main-heading">WELCOME TO <br> GIKI'S MESS MANAGEMENT SYSTEM</h1>
+                <p>This is your one stop for getting all your messing needs catered</p>
+                <div class="mt-5">
+                    <a class="main-btn primary-btn" href="{% url 'login_supervisor' %}">Supervisor</a>
+                    <a class="main-btn secondary-btn ms-4" href="{% url 'login_student' %}">Student</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
